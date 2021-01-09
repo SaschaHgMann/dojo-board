@@ -1,12 +1,38 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app id="app">
+    <v-card tile>
+      <AppBar />
+      <v-sheet
+        id="scrolling-main-container"
+        class="overflow-y-auto"
+        height="100vh"
+      >
+        <v-img
+          min-height="100%"
+          gradient="to top, rgba(128,208,199,.8) , rgba(19,84,122,.5)"
+        >
+          <v-main class="my-12">
+            <router-view />
+          </v-main>
+        </v-img>
+      </v-sheet>
+      <BottomNavigation />
+    </v-card>
+  </v-app>
 </template>
+
+<script>
+import AppBar from "@/components/AppBar";
+import BottomNavigation from "@/components/BottomNavigation";
+
+export default {
+  name: "App",
+  components: {
+    AppBar,
+    BottomNavigation
+  }
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -18,14 +44,14 @@
 }
 
 #nav {
-  padding: 30px;
+  background-color: #13547a;
 
   a {
-    font-weight: bold;
     color: #2c3e50;
+    text-decoration: none;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: white;
     }
   }
 }
