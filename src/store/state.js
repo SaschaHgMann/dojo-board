@@ -24,6 +24,13 @@ const state =  {
         },
     ],
 
+    groups: [
+        'Bonsais',
+        'Kids 1',
+        'Kids 2',
+        'Erwachsene',
+    ],
+
     mockTrainings: [
         {
             date: '01.02.2021',
@@ -94,7 +101,7 @@ const state =  {
         },
         {
             date: '01.02.2021',
-            group: 'Kids 1',
+            group: 'Bonsais',
             title: 'Kihon 2',
             content: 'Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
             creator: 'Alex',
