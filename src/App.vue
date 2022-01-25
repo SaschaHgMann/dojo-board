@@ -7,17 +7,17 @@
         class="overflow-y-auto"
         height="100vh"
       >
-        <!-- <v-img
+        <v-img
           min-height="100%"
           gradient="to top, rgba(128,208,199,.8) , rgba(19,84,122,.5)"
-        > -->
+        >
           <v-main class="my-12">
             <router-view />
           </v-main>
-        <!-- </v-img> -->
+        </v-img>
       </v-sheet>
-      <!-- <BottomNavigation /> -->
-      <BottomNavigation v-if="mobile" />
+      <BottomNavigation />
+      <!-- <BottomNavigation v-if="mobile" /> -->
     </v-card>
   </v-app>
 </template>

@@ -110,7 +110,7 @@ export default {
       this.$emit('cancel')
     },
     handleSave() {
-      this.$emit('confirmed', true)
+      this.$emit('confirm', true)
     }
   }
   
