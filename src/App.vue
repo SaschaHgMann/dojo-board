@@ -7,16 +7,17 @@
         class="overflow-y-auto"
         height="100vh"
       >
-        <v-img
+        <!-- <v-img
           min-height="100%"
           gradient="to top, rgba(128,208,199,.8) , rgba(19,84,122,.5)"
-        >
+        > -->
           <v-main class="my-12">
             <router-view />
           </v-main>
-        </v-img>
+        <!-- </v-img> -->
       </v-sheet>
-      <BottomNavigation />
+      <!-- <BottomNavigation /> -->
+      <BottomNavigation v-if="mobile" />
     </v-card>
   </v-app>
 </template>
@@ -30,6 +31,12 @@ export default {
   components: {
     AppBar,
     BottomNavigation
+  },
+
+  computed: {
+    mobile() {
+      return this.$vuetify.breakpoint.sm
+    },
   }
 };
 </script>
@@ -39,7 +46,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 
