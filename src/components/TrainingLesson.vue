@@ -74,7 +74,7 @@
         
         <v-card-actions class="py-0 pl-4">
           <v-icon small>mdi-account</v-icon>
-          <h4 class="ml-1">{{lessonEntry.creator}}</h4>
+          <h4 class="ml-1">{{lessonEntry.createdBy}}</h4>
           <v-spacer></v-spacer>
           <v-btn fab small text><v-icon>mdi-pencil</v-icon></v-btn>
           <v-btn fab small text><v-icon>mdi-delete</v-icon></v-btn>
@@ -99,11 +99,6 @@ export default {
             type: Array,
             requirede: true
         },
-    },
-
+    }
 }
 </script>
-
-<style>
-
-</style>

@@ -17,7 +17,7 @@
           :key="index"
           outlined 
           color="white"
-          @click="handleClickChip(group)"
+          @click="handleClickGroup(group)"
         >
           {{group}}
         </v-chip>
@@ -55,13 +55,15 @@ export default {
 
   data: () => ({
     dialog: false,
+    // allLessons: this.getMockTrainings
   }),
 
   computed: {
     ...mapGetters([
       'getGroups',
       'getMockTrainings'
-    ])
+    ]),
+
   },
 
   methods: {
@@ -77,9 +79,11 @@ export default {
       console.log('new session cancelled')
       this.dialog = false
     },
-    handleClickChip(group) {
-      console.log('test', group)
-    }
+    handleClickGroup(groupSelected) {
+      this.getMockTrainings.filter(lesson => lesson.group == groupSelected);
+      console.log('test', groupSelected)
+    },
+
   }
   
 };

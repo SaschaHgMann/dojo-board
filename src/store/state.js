@@ -28,7 +28,7 @@ const state =  {
         'Bonsais',
         'Kids 1',
         'Kids 2',
-        'Erwachsene',
+        'Jugend/Erwachsene',
     ],
 
     mockTrainings: [
@@ -37,7 +37,7 @@ const state =  {
             group: 'Kids 1',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
-            creator: 'Sascha',
+            createdBy: 'Sascha',
             attendShow: false,
             attendees: [
                 {
@@ -72,7 +72,7 @@ const state =  {
             group: 'Kids 2',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
-            creator: 'Claudia',
+            createdBy: 'Claudia',
             attendShow: false,
             attendees: [
                 {
@@ -104,7 +104,7 @@ const state =  {
             group: 'Bonsais',
             title: 'Kihon 2',
             content: 'Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
-            creator: 'Alex',
+            createdBy: 'Alex',
             attendShow: false,
             attendees: [
                 {
@@ -141,7 +141,7 @@ const state =  {
             group: 'Erwachsene',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau (A) Low-Kick ',
-            creator: 'Sascha',
+            createdBy: 'Sascha',
             attendShow: false,
             attendees: [
                 {
@@ -171,7 +171,7 @@ const state =  {
             group: 'Erwachsene',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau (A) Low-Kick Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
-            creator: 'Alex',
+            createdBy: 'Alex',
             attendShow: false,
             attendees: [
                 {
