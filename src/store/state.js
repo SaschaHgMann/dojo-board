@@ -6,19 +6,19 @@ const state =  {
     bottomNavigationItems: [
         {
             title: 'Trainings',
-            linkTo: '/',
+            linkTo: '/trainings',
             icon: 'mdi-karate',
             active: null,
         },
         {
             title: 'Member',
-            linkTo: '/membersOverview',
+            linkTo: '/member',
             icon: 'mdi-account-group',
             active: null,
         },
         {
             title: 'Termine',
-            linkTo: '/scheduleOverview',
+            linkTo: '/schedule',
             icon: 'mdi-calendar',
             active: null,
         },

@@ -55,8 +55,10 @@ export default {
       'setAppBarTitle'
     ]),
     handleClick() {
-      this.$router.push("/")
-      this.setAppBarTitle('Trainings')
+      if (this.$route.path !== "/") {
+        this.$router.push("/")
+      }
+      this.setAppBarTitle('Kyotokan e.V.')
     }
   }
 

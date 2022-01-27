@@ -1,17 +1,22 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import TrainingsOverview from "../views/TrainingsOverview.vue";
+import LandingView from "../views/LandingView.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "TrainingsOverview",
-    component: TrainingsOverview
+    name: "LandingView",
+    component: LandingView,
   },
   {
-    path: "/membersOverview",
+    path: "/trainings",
+    name: "TrainingsOverview",
+    component: () => import("../views/TrainingsOverview.vue")
+  },
+  {
+    path: "/member",
     name: "MembersOverview",
     // route level code-splitting
     // this generates a separate chunk (membersOverview.[hash].js) for this route
@@ -22,7 +27,7 @@ const routes = [
       )
   },
   {
-    path: "/scheduleOverview",
+    path: "/schedule",
     name: "ScheduleOverview",
 
     component: () => import("../views/ScheduleOverview.vue")

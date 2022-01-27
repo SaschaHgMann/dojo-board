@@ -1,14 +1,14 @@
 <template>
   <v-app id="app">
     <v-card tile>
-      <AppBar />
+      <AppBar v-if="!isLandingView"/>
       <v-sheet
         id="scrolling-main-container"
         class="overflow-y-auto"
         height="100vh"
       >
         <v-img
-          min-height="100%"
+          min-height="100vh"
           gradient="to top, rgba(128,208,199,.8) , rgba(19,84,122,.5)"
         >
           <v-main class="my-12">
@@ -16,8 +16,8 @@
           </v-main>
         </v-img>
       </v-sheet>
-      <BottomNavigation />
-      <!-- <BottomNavigation v-if="mobile" /> -->
+      <BottomNavigation v-if="!isLandingView"/>
+      <!-- <BottomNavigation v-if="isMobile" /> -->
     </v-card>
   </v-app>
 </template>
@@ -34,7 +34,11 @@ export default {
   },
 
   computed: {
-    mobile() {
+    isLandingView() {
+      return this.$route.path === "/"
+    },
+
+    isMobile() {
       return this.$vuetify.breakpoint.sm
     },
   }
@@ -51,7 +55,8 @@ export default {
 }
 
 #nav {
-  background-color: #13547a;
+  /* background-color: #13547a; */
+  //background-color: gradient="to top, rgba(19,84,122,.5), rgba(128,208,199,.8)";
 
   a {
     color: #2c3e50;
