@@ -17,6 +17,7 @@
         </v-img>
       </v-sheet>
       <BottomNavigation />
+      <!-- <BottomNavigation v-if="mobile" /> -->
     </v-card>
   </v-app>
 </template>
@@ -30,6 +31,12 @@ export default {
   components: {
     AppBar,
     BottomNavigation
+  },
+
+  computed: {
+    mobile() {
+      return this.$vuetify.breakpoint.sm
+    },
   }
 };
 </script>
@@ -39,7 +46,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 
