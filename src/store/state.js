@@ -37,7 +37,11 @@ const state =  {
             group: 'Kids 1',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
+            coach: 'Sascha',
+            createdAt: null,
             createdBy: 'Sascha',
+            editedAt: null,
+            editedBy: null,
             attendShow: false,
             attendees: [
                 {
@@ -72,7 +76,11 @@ const state =  {
             group: 'Kids 2',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
-            createdBy: 'Claudia',
+            coach: 'Claudia',
+            createdAt: null,
+            createdBy: 'Sascha',
+            editedAt: null,
+            editedBy: null,
             attendShow: false,
             attendees: [
                 {
@@ -104,7 +112,11 @@ const state =  {
             group: 'Bonsais',
             title: 'Kihon 2',
             content: 'Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
-            createdBy: 'Alex',
+            coach: 'Alex',
+            createdAt: null,
+            createdBy: 'Sascha',
+            editedAt: null,
+            editedBy: null,
             attendShow: false,
             attendees: [
                 {
@@ -137,11 +149,15 @@ const state =  {
             ]
         },
         {
-            date: '2021-04-02',
+            date: '2021-02-04',
             group: 'Jugend/Erwachsene',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau (A) Low-Kick ',
+            coach: 'Sascha',
+            createdAt: null,
             createdBy: 'Sascha',
+            editedAt: null,
+            editedBy: null,
             attendShow: false,
             attendees: [
                 {
@@ -171,7 +187,11 @@ const state =  {
             group: 'Bonsais',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau (A) Low-Kick Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
-            createdBy: 'Alex',
+            coach: 'Alex',
+            createdAt: null,
+            createdBy: 'Sascha',
+            editedAt: null,
+            editedBy: null,
             attendShow: false,
             attendees: [
                 {

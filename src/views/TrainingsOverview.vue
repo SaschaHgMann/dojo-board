@@ -8,7 +8,7 @@
         color="white"
       >mdi-filter</v-icon>
       <v-chip-group
-        absolute
+        v-model="groupFilter"
         multiple
         active-class="primary--text"
       >
@@ -17,6 +17,8 @@
           :key="index"
           outlined 
           color="white"
+          filter
+          small
           @click="handleClickGroupFilter(group)"
         >
           {{group}}

@@ -9,19 +9,24 @@
         
         <v-divider class="mx-4"></v-divider>
         
-        <v-card-subtitle><h3>{{lessonEntry.title}}</h3></v-card-subtitle>
+        <v-card-subtitle>
+          <h3>{{lessonEntry.title}}</h3>
+        </v-card-subtitle>
         
         <v-card-text class="pb-0">
           <p>
             {{lessonEntry.content}}
           </p>
-          <v-card-actions class="pl-0">
+          <v-card-actions class="px-0">
+            <v-icon medium>mdi-book-account-outline</v-icon>
+            <h3>{{lessonEntry.coach}}</h3>
+            <v-spacer></v-spacer>
             <v-btn
               class="pa-0"
-              text
+              depressed
               @click="lessonEntry.attendShow = !lessonEntry.attendShow"
             >
-              <v-icon>mdi-account-multiple-check</v-icon>
+              <v-icon class="ml-1">mdi-account-multiple-check</v-icon>
               <span class="mx-1">{{lessonEntry.attendees.length}}</span>
               Teilnehmer
               <v-spacer></v-spacer>
@@ -36,6 +41,7 @@
                 <v-card
                   v-for="(attendee, index) in allLessons[index].attendees"
                   :key="index"
+                  class="pr-5"
                 >
                   <v-row class="my-2 px-1">
                     <v-col 
@@ -50,17 +56,21 @@
                     >
                       {{attendee.age}} Jahre
                     </v-col>
+                    <v-spacer></v-spacer>
                     <v-col 
                       cols="3"
                       class="py-1"  
                     >
-                      {{attendee.grade}}
+                      <span v-show="$vuetify.breakpoint.sm">{{attendee.grade}}</span>
                     </v-col>
                     <v-col 
                       cols="1"
                       class="py-1"  
                     >
-                      <v-icon>mdi-information</v-icon>
+                      <v-btn icon small @click="showMemberDetails(attendee)">
+                        <v-icon>mdi-information</v-icon>
+                      </v-btn>
+                      
                     </v-col>
                   </v-row>
               
@@ -73,8 +83,7 @@
         </v-card-text>
         
         <v-card-actions class="py-0 pl-4">
-          <v-icon small>mdi-account</v-icon>
-          <h4 class="ml-1">{{lessonEntry.createdBy}}</h4>
+          <span class="caption">{{lessonEntry.createdBy}}</span>
           <v-spacer></v-spacer>
           <v-btn fab small text><v-icon>mdi-pencil</v-icon></v-btn>
           <v-btn fab small text><v-icon>mdi-delete</v-icon></v-btn>
@@ -99,6 +108,13 @@ export default {
             type: Array,
             requirede: true
         },
+    },
+
+    methods: {
+      showMemberDetails(attendee) {
+        // TODO: show dialog with full member details 
+        console.log('attendee object', attendee)
+      }
     }
 }
 </script>

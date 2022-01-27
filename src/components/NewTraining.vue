@@ -203,8 +203,8 @@ export default {
     },
     handleSave() {
       this.$emit('confirm')
-      console.log('newTraining:', this.newTraining)
       this.newTraining.date = (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)
+      console.log('newTraining:', this.newTraining)
     }
   }
   
