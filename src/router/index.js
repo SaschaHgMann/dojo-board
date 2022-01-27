@@ -1,14 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import TrainingLessonsOverview from "../views/TrainingLessonsOverview.vue";
+import TrainingsOverview from "../views/TrainingsOverview.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "TrainingLessonsOverview",
-    component: TrainingLessonsOverview
+    name: "TrainingsOverview",
+    component: TrainingsOverview
   },
   {
     path: "/membersOverview",

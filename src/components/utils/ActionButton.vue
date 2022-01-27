@@ -11,7 +11,7 @@
       style="background-image: linear-gradient(to top, rgba(128,208,199,.5), rgba(19,84,122,.7))"
       @click="handleClick()"
     >
-      <v-icon color="#2c3e50" large>{{iconLogo}}</v-icon>
+      <v-icon color="white" large>{{iconLogo}}</v-icon>
     </v-btn>
   </v-fab-transition>
 </template>

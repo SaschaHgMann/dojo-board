@@ -33,7 +33,7 @@ const state =  {
 
     mockTrainings: [
         {
-            date: '01.02.2021',
+            date: '2021-02-01',
             group: 'Kids 1',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
@@ -68,7 +68,7 @@ const state =  {
             ]
         },
         {
-            date: '01.02.2021',
+            date: '2021-02-02',
             group: 'Kids 2',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
@@ -100,7 +100,7 @@ const state =  {
             ]
         },
         {
-            date: '01.02.2021',
+            date: '2021-02-03',
             group: 'Bonsais',
             title: 'Kihon 2',
             content: 'Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick. Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
@@ -137,8 +137,8 @@ const state =  {
             ]
         },
         {
-            date: '01.02.2021',
-            group: 'Erwachsene',
+            date: '2021-04-02',
+            group: 'Jugend/Erwachsene',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau (A) Low-Kick ',
             createdBy: 'Sascha',
@@ -167,8 +167,8 @@ const state =  {
             ]
         },
         {
-            date: '01.02.2021',
-            group: 'Erwachsene',
+            date: '2021-02-05',
+            group: 'Bonsais',
             title: 'Kihon 1',
             content: 'Übungsreihenaufbau (A) Low-Kick Übungsreihenaufbau von (A) Low-Kick über (B) Front-Kick zu (C) High-Kick.',
             createdBy: 'Alex',

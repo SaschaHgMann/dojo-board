@@ -84,7 +84,7 @@
 
 <script>
 export default {
-    name: "TrainingLesson",
+    name: "SingleTraining",
 
     props: {
         index: {

@@ -17,7 +17,7 @@
           :key="index"
           outlined 
           color="white"
-          @click="handleClickGroup(group)"
+          @click="handleClickGroupFilter(group)"
         >
           {{group}}
         </v-chip>
@@ -25,11 +25,11 @@
     </v-col>
 
     <v-col 
-      v-for="(entry, index) in getMockTrainings"
+      v-for="(entry, index) in filteredTrainings"
       :key="index"
       cols="12"
     >
-      <training-lesson :index="index" :lessonEntry="entry" :allLessons="getMockTrainings"/>
+      <single-training :index="index" :lessonEntry="entry" :allLessons="filteredTrainings"/>
     </v-col>
     
     <action-button iconLogo="mdi-clipboard-plus-outline" @action="handleClickNewSession()" />
@@ -41,7 +41,7 @@
 <script>
 import ActionButton from '@/components/utils/ActionButton'
 import NewTraining from '@/components/NewTraining'
-import TrainingLesson from '@/components/TrainingLesson'
+import SingleTraining from '@/components/SingleTraining'
 import {mapGetters} from 'vuex'
 
 export default {
@@ -50,12 +50,12 @@ export default {
   components: {
     ActionButton,
     NewTraining,
-    TrainingLesson,
+    SingleTraining,
   },
 
   data: () => ({
     dialog: false,
-    // allLessons: this.getMockTrainings
+    groupFilter: [],
   }),
 
   computed: {
@@ -64,24 +64,44 @@ export default {
       'getMockTrainings'
     ]),
 
+    filteredTrainings() {
+      let allEntries = this.getMockTrainings
+      if(!this.groupFilter.length) {
+        return allEntries
+      }
+      else {
+        let filter = []
+        this.groupFilter.forEach((group) => {
+          let filteredEntries = allEntries.filter((entry) => entry.group == group)
+          filter = filter.concat(filteredEntries)
+          filter.sort((a, b) => {
+            return new Date(a.date) - new Date (b.date);
+          })
+        })
+        return filter
+      }
+    }
   },
 
   methods: {
     handleClickNewSession() {
-      console.log('click new session')
       this.dialog = true
     },
     handleSaveNewTraining() {
-      console.log('new session created')
+      console.log('new training created -> Add confirmation message')
       this.dialog = false
     },
     handleCancelNewTraining() {
-      console.log('new session cancelled')
       this.dialog = false
     },
-    handleClickGroup(groupSelected) {
-      this.getMockTrainings.filter(lesson => lesson.group == groupSelected);
-      console.log('test', groupSelected)
+    handleClickGroupFilter(group) {
+      let index = this.groupFilter.indexOf(group)
+      if(index === -1) {
+        this.groupFilter.push(group)
+      }
+      else {
+        this.groupFilter.splice(index, 1)
+      }
     },
 
   }

@@ -58,7 +58,7 @@
               </v-col>
               
               <v-col
-                class="pb-0" 
+                class="py-0" 
                 cols="12"
               >
                 <v-autocomplete
@@ -139,15 +139,15 @@
           <v-spacer></v-spacer>
           <slot name="action-buttons">
             <v-btn
-              color="blue darken-1"
+              color="red darken-1"
               text
               @click="handleCancel()"
             >
               Close
             </v-btn>
             <v-btn
-              color="blue darken-1"
-              text
+              color="primary darken-1"
+              outlined
               @click="handleSave(newTraining)"
             >
               Save
