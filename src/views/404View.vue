@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "404View",
+  name: "Error404View",
 
   computed: {
     getLogoWidth() {
