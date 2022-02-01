@@ -7,6 +7,10 @@ const types = {
             VALUE: 'SET_BOTTOMNAVIGATION_VALUE',
         },
     },
+
+    TRIGGER: {
+        ALERT: 'TRIGGER_ALERT'
+    }
 }
 
 export default types
