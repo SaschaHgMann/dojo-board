@@ -1,31 +1,36 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import TrainingsOverview from "../views/TrainingsOverview.vue";
+import LandingView from "../views/LandingView.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "TrainingsOverview",
-    component: TrainingsOverview
+    name: "LandingView",
+    component: LandingView,
   },
   {
-    path: "/membersOverview",
-    name: "MembersOverview",
-    // route level code-splitting
-    // this generates a separate chunk (membersOverview.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: "/trainings",
+    name: "Trainings",
+    component: () => import("../views/TrainingsOverview.vue")
+  },
+  {
+    path: "/member",
+    name: "Member",
     component: () =>
       import(
         /* webpackChunkName: "membersOverview" */ "../views/MembersOverview.vue"
       )
   },
   {
-    path: "/scheduleOverview",
-    name: "ScheduleOverview",
-
+    path: "/schedule",
+    name: "Termine",
     component: () => import("../views/ScheduleOverview.vue")
+  },
+  {
+    path: "*",
+    component: () => import("../views/404View.vue")
   }
 ];
 

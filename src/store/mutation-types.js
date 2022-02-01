@@ -3,6 +3,9 @@ const types = {
         APPBAR: {
             TITLE: 'SET_APPBAR_TITLE',
         },
+        BOTTOMNAVIGATION: {
+            VALUE: 'SET_BOTTOMNAVIGATION_VALUE',
+        },
     },
 }
 

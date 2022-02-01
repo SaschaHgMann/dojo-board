@@ -1,6 +1,7 @@
 const getters = {
     getAppBarTitle: (state) => state.appBar.title,
-    getBottomNavigationItems: (state) => state.bottomNavigationItems,
+    getNavigationItems: (state) => state.navigationItems,
+    getNavigationValue: (state) => state.navigationValue,
 
     getGroups: (state) => state.groups,
     getMockTrainings: (state) => state.mockTrainings

@@ -1,14 +1,34 @@
 <template>
-  <v-container>
-    <h1>Termine</h1>
-    <br>
-    <br>
-    <h3>in progress</h3>
+  <v-container fluid>
+    <v-row class="mx-2 my-3 mt-sm-16">
+      <v-col cols="12">
+        <h1>Termine</h1>
+      </v-col>
+      <v-col cols="12">
+        <h3>in progress</h3>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
-  name: "MembersOverview"
+  name: "MembersOverview",
+
+  created() {
+    this.setAppBarTitle(this.$route.name)
+
+    // Improve
+    this.setNavigationValue(2)
+  },
+
+  methods: {
+    ...mapActions([
+      'setAppBarTitle',
+      'setNavigationValue'
+    ]),
+  }
 };
 </script>
