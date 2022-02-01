@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import ActionButton from '@/components/utils/ActionButton'
+import ActionButton from '@/components/layout/ActionButton'
 import NewTraining from '@/components/NewTraining'
 import SingleTraining from '@/components/SingleTraining'
 import {mapActions, mapGetters} from 'vuex'
@@ -93,13 +93,17 @@ export default {
 
   methods: {
     ...mapActions([
-      'setAppBarTitle'
+      'setAppBarTitle',
+      'showNotification',
     ]),
     handleClickNewSession() {
       this.dialog = true
     },
     handleSaveNewTraining() {
-      console.log('new training created -> Add confirmation message')
+      // simulating api response
+      setTimeout(()=>{
+        this.showNotification({type: 'success', text: 'Training hinzugefügt'})
+      },500)
       this.dialog = false
     },
     handleCancelNewTraining() {

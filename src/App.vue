@@ -1,6 +1,7 @@
 <template>
   <v-app id="app">
     <v-card tile>
+      <NotificationAlert />
       <AppBar v-if="showTopNavigation" :mobile="isMobile"/>
       <v-sheet
         id="scrolling-main-container"
@@ -23,14 +24,16 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import AppBar from "@/components/AppBar";
-import BottomNavigation from "@/components/BottomNavigation";
+import AppBar from "@/components/layout/AppBar";
+import BottomNavigation from "@/components/layout/BottomNavigation";
+import NotificationAlert from "@/components/layout/NotificationAlert";
 
 export default {
   name: "App",
   components: {
     AppBar,
-    BottomNavigation
+    BottomNavigation,
+    NotificationAlert,
   },
 
   computed: {
