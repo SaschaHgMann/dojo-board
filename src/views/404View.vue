@@ -1,13 +1,10 @@
 <template>
-  <v-container>
-    <v-row
+  <v-container class="text-center">
+    <!-- <v-row
       class="mt-10 text-center"
-    >
-      <v-col cols="12">
-        <h1>WILLKOMMEN</h1>
-        <h2>Landing View</h2>
-        <h3>in progress</h3>
-      </v-col>
+    > -->
+    <v-row align="center">
+      
       <v-col cols="12" class="mt-10">
         <v-btn 
           icon 
@@ -16,6 +13,10 @@
         >
           <img alt="Kyotokan logo" src="@/assets/kyotokanlogo.png" :width="getLogoWidth"/>
         </v-btn>
+      </v-col>
+      <v-col cols="12" class="text-center">
+        <h1>Whoops...</h1>
+        <h2>Diese Seite gibt es nicht</h2>
       </v-col>
     </v-row>
   </v-container>

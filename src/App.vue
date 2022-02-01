@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <v-card tile>
-      <AppBar v-if="!isLandingView"/>
+      <AppBar v-if="showTopNavigation" :mobile="isMobile"/>
       <v-sheet
         id="scrolling-main-container"
         class="overflow-y-auto"
@@ -16,13 +16,13 @@
           </v-main>
         </v-img>
       </v-sheet>
-      <BottomNavigation v-if="!isLandingView"/>
-      <!-- <BottomNavigation v-if="isMobile" /> -->
+      <BottomNavigation v-if="showBottomNavigation"/>
     </v-card>
   </v-app>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import AppBar from "@/components/AppBar";
 import BottomNavigation from "@/components/BottomNavigation";
 
@@ -34,13 +34,25 @@ export default {
   },
 
   computed: {
+    ...mapGetters([
+      'getNavigationItems'
+    ]),
+    // is404View() {
+    //   return !this.getNavigationItems.some(this.$route.path)
+    // },
     isLandingView() {
       return this.$route.path === "/"
     },
-
     isMobile() {
-      return this.$vuetify.breakpoint.sm
+      return this.$vuetify.breakpoint.xs
     },
+
+    showTopNavigation() {
+      return !this.isLandingView && !this.is404View
+    },
+    showBottomNavigation() {
+      return !this.isLandingView && this.isMobile
+    }
   }
 };
 </script>
@@ -54,17 +66,9 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
-  /* background-color: #13547a; */
-  //background-color: gradient="to top, rgba(19,84,122,.5), rgba(128,208,199,.8)";
-
-  a {
-    color: #2c3e50;
-    text-decoration: none;
-
-    &.router-link-exact-active {
-      color: white;
-    }
-  }
+.v-app-bar-title__content{
+  text-overflow: clip;
+  overflow: visible;
 }
+
 </style>

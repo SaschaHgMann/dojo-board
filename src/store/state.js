@@ -3,26 +3,25 @@ const state =  {
         title: 'Kyotokan e.V.', 
     },
 
-    bottomNavigationItems: [
+    navigationItems: [
         {
             title: 'Trainings',
             linkTo: '/trainings',
             icon: 'mdi-karate',
-            active: null,
         },
         {
             title: 'Member',
             linkTo: '/member',
             icon: 'mdi-account-group',
-            active: null,
         },
         {
             title: 'Termine',
             linkTo: '/schedule',
             icon: 'mdi-calendar',
-            active: null,
         },
     ],
+    
+    navigationValue: null,
 
     groups: [
         'Bonsais',

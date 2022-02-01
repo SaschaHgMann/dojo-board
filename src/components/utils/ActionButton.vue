@@ -1,7 +1,7 @@
 <template>
   <v-fab-transition>
     <v-btn
-      class="mb-14"
+      class="mb-sm-5 mb-14"
       bottom
       elevation="5"
       fab
