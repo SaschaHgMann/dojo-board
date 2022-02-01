@@ -37,9 +37,12 @@ export default {
     ...mapGetters([
       'getNavigationItems'
     ]),
-    // is404View() {
-    //   return !this.getNavigationItems.some(this.$route.path)
-    // },
+    is404View() {
+      // IMPROVE
+      const allRoutes = this.getNavigationItems.map(item => item.linkTo)
+      const currentView = this.$route.path
+      return !allRoutes.includes(currentView)
+    },
     isLandingView() {
       return this.$route.path === "/"
     },
@@ -51,7 +54,7 @@ export default {
       return !this.isLandingView && !this.is404View
     },
     showBottomNavigation() {
-      return !this.isLandingView && this.isMobile
+      return !this.isLandingView && this.isMobile && !this.is404View
     }
   }
 };

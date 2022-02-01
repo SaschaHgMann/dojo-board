@@ -1,9 +1,6 @@
 <template>
   <v-container class="text-center">
-    <!-- <v-row
-      class="mt-10 text-center"
-    > -->
-    <v-row align="center">
+    <v-row align="center" style="height: 100vh">
       
       <v-col cols="12" class="mt-10">
         <v-btn 
@@ -14,22 +11,33 @@
           <img alt="Kyotokan logo" src="@/assets/kyotokanlogo.png" :width="getLogoWidth"/>
         </v-btn>
       </v-col>
-      <v-col cols="12" class="text-center">
-        <h1>Whoops...</h1>
-        <h2>Diese Seite gibt es nicht</h2>
+      <v-col cols="12">
+        <h1 class="primary--text">Whoops...</h1>
+        <h3 class="primary--text">Diese Seite gibt es nicht!</h3>
+        <v-btn 
+          class="ma-2 ma-md-5"
+          color="primary"
+          outlined 
+          @click="$router.go(-1)"
+        >
+          <v-icon left>mdi-undo</v-icon>
+          back
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
 export default {
-  name: "LandingView",
+  name: "404View",
 
   computed: {
     getLogoWidth() {
+      // console.log('check height', window.innerHeight)
+      // if(window.innerHeight < 800) {
+      //   return '80vh'
+      // }
       if(this.$vuetify.breakpoint.xs) {
         return '360px'
       }
@@ -38,13 +46,7 @@ export default {
   },
 
   methods: {
-    ...mapActions([
-      'setAppBarTitle',
-      'setNavigationValue',
-    ]),
     handleClick() {
-      this.setAppBarTitle('Trainings')
-      this.setNavigationValue(0)
       this.$router.push("/trainings")
     }
   }

@@ -5,10 +5,6 @@
     elevate-on-scroll
     scroll-target="#scrolling-main-container"
   >
-  <!-- <v-app-bar
-    absolute
-    dark
-  > -->
     <template v-slot:img="{ props }">
       <v-img
         v-bind="props"

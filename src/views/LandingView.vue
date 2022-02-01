@@ -1,14 +1,12 @@
 <template>
-  <v-container>
-    <v-row
-      class="mt-10 text-center"
-    >
+  <v-container class="text-center">
+    <v-row align="center" style="height: 100vh">
       <v-col cols="12">
-        <h1>WILLKOMMEN</h1>
+        <h1 class="primary--text">WILLKOMMEN</h1>
         <h2>Landing View</h2>
         <h3>in progress</h3>
       </v-col>
-      <v-col cols="12" class="mt-10">
+      <v-col cols="12" class="mb-10">
         <v-btn 
           icon 
           plain 
