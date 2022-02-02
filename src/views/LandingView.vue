@@ -1,12 +1,10 @@
 <template>
-  <v-container class="text-center">
-    <v-row align="center" style="height: 100vh">
-      <v-col cols="12">
-        <h1 class="primary--text">WILLKOMMEN</h1>
-        <h2>Landing View</h2>
-        <h3>in progress</h3>
-      </v-col>
-      <v-col cols="12" class="mb-10">
+  <v-container fill-height class="text-center">
+    <v-row >
+      
+      <WelcomeScreen :loggedIn="loggedIn"/>
+
+      <!-- <v-col cols="12" class="mb-10">
         <v-btn 
           icon 
           plain 
@@ -14,16 +12,25 @@
         >
           <img alt="Kyotokan logo" src="@/assets/kyotokanlogo.png" :width="getLogoWidth"/>
         </v-btn>
-      </v-col>
+      </v-col> -->
     </v-row>
   </v-container>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
+import WelcomeScreen from '@/components/WelcomeScreen'
 
 export default {
   name: "LandingView",
+
+  components: {
+    WelcomeScreen,
+  },
+
+  data: () => ({
+    loggedIn: false,
+  }),
 
   computed: {
     getLogoWidth() {
