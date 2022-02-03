@@ -1,6 +1,16 @@
 const state =  {
+    app: {
+        club: {
+            description: 'Karate Dojo',
+            name: 'Kyotokan e.V.',
+            location: 'Kaltenkirchen'
+        },
+        title: 'Dojo Board',
+    },
+
     appBar: {
-        title: 'Kyotokan e.V.', 
+        titleDefault: 'Kyotokan e.V. - Dojo Board', 
+        titleMobile: 'Kyotokan e.V. - Dojo Board', 
     },
 
     navigationItems: [

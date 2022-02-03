@@ -1,7 +1,7 @@
 const types = {
     SET: {
         APPBAR: {
-            TITLE: 'SET_APPBAR_TITLE',
+            TITLEMOBILE: 'SET_APPBAR_TITLEMOBILE',
         },
         BOTTOMNAVIGATION: {
             VALUE: 'SET_BOTTOMNAVIGATION_VALUE',

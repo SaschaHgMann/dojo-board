@@ -20,7 +20,7 @@
       <img alt="Kyotokan logo" src="@/assets/kyotokanlogo.png" width="38px"/>
     </v-btn>
 
-    <v-app-bar-title class="title">{{mobile ? getAppBarTitle : 'Kyotokan e.V. - Dojo Board'}}</v-app-bar-title>
+    <v-app-bar-title class="title">{{mobile ? getAppBarTitleMobile : getAppBarTitleDefault}}</v-app-bar-title>
 
     <v-spacer></v-spacer>
 
@@ -58,18 +58,19 @@
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
-    name: "AppBar",
+  name: "AppBar",
 
-    props: {
-      mobile: {
-        type: Boolean,
-        required: true
-      }
-    },
+  props: {
+    mobile: {
+      type: Boolean,
+      required: true
+    }
+  },
 
-    computed: {
+  computed: {
     ...mapGetters([
-      'getAppBarTitle',
+      'getAppBarTitleDefault',
+      'getAppBarTitleMobile',
       'getNavigationItems',
       'getNavigationValue',
     ]),
