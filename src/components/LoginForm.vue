@@ -22,7 +22,7 @@
                    block
                    color="primary"
                    type="submit"
-                   @click="handleClick()"
+                   @click="login()"
                 >
                   <span>los gehts</span>
                   <v-icon class="ml-5">mdi-arrow-right</v-icon>
@@ -36,7 +36,7 @@
 export default {
     name: 'LoginForm',
   
-    methody: {
+    methods: {
         handleClick() {
             setTimeout(()=>{
                 this.showNotification({type: 'success', text: 'Angemeldet'})
@@ -44,7 +44,16 @@ export default {
             this.setAppBarTitle('Trainings')
             this.setNavigationValue(0)
             this.$router.push("/trainings")
-        }
+        },
+
+        login() {
+            this.$auth.loginWithRedirect();
+            this.setAppBarTitle('Trainings')
+            this.setNavigationValue(0)
+            this.$router.push("/trainings")
+        },
+            
+        
     }
 
 }

@@ -2,7 +2,7 @@
   <v-container>
       <v-row class="pa-4" >
         <v-col cols="12">
-          <span v-if="loggedIn" class="text-h3 font-weight-medium primary--text">Hey {{user.firstName}}</span>
+          <span v-if="loggedIn" class="text-h3 font-weight-medium primary--text">Hey {{ $auth.user.name }}</span>
           <span v-else class="text-h3 font-weight-medium primary--text">WILLKOMMEN</span>
         </v-col>
         <v-col cols="12">

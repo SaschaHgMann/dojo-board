@@ -21,6 +21,7 @@
           <v-btn 
             color="primary" 
             outlined
+            @click="logout()"
           >
             <span>logout</span>
             <v-icon class="ml-2">mdi-logout</v-icon>
@@ -51,6 +52,10 @@ export default {
         this.$router.push(item.linkTo)
       }
       this.setNavigationValue(index)
+    },
+
+    logout() {
+      this.$auth.logout({returnTo: window.location.origin});
     }
   }
 

@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import LandingView from "../views/LandingView.vue";
+import { authGuard } from '../auth/authGuard';
 
 Vue.use(VueRouter);
 
@@ -13,7 +14,8 @@ const routes = [
   {
     path: "/trainings",
     name: "Trainings",
-    component: () => import("../views/TrainingsOverview.vue")
+    component: () => import("../views/TrainingsOverview.vue"),
+    beforeEnter: authGuard,
   },
   {
     path: "/member",
@@ -21,12 +23,14 @@ const routes = [
     component: () =>
       import(
         /* webpackChunkName: "membersOverview" */ "../views/MembersOverview.vue"
-      )
-  },
+      ),
+    beforeEnter: authGuard,
+    },
   {
     path: "/schedule",
     name: "Termine",
-    component: () => import("../views/ScheduleOverview.vue")
+    component: () => import("../views/ScheduleOverview.vue"),
+    beforeEnter: authGuard,
   },
   {
     path: "*",

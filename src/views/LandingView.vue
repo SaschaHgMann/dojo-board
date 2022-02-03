@@ -28,11 +28,15 @@ export default {
     WelcomeScreen,
   },
 
-  data: () => ({
-    loggedIn: false,
-  }),
+  // data: () => ({
+  //   loggedIn: false,
+  // }),
 
   computed: {
+    loggedIn() {
+      return this.$auth.isAuthenticated
+    },
+
     getLogoWidth() {
       if(this.$vuetify.breakpoint.xs) {
         return '360px'
