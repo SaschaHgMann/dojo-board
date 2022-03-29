@@ -1,6 +1,9 @@
 import types from './mutation-types'
 
 const actions = {
+    setActiveUser({commit}, user) {
+        commit(types.SET.ACTIVE.USER, user)
+    },
     setAppBarTitle({commit}, title) {
         commit(types.SET.APPBAR.TITLEMOBILE, title)
     },

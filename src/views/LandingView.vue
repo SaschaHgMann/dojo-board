@@ -1,56 +1,38 @@
 <template>
   <v-container fill-height class="text-center">
     <v-row >
-      
-      <WelcomeScreen :loggedIn="loggedIn"/>
-
-      <!-- <v-col cols="12" class="mb-10">
-        <v-btn 
-          icon 
-          plain 
-          @click="handleClick()"
-        >
-          <img alt="Kyotokan logo" src="@/assets/kyotokanlogo.png" :width="getLogoWidth"/>
-        </v-btn>
-      </v-col> -->
+      <WelcomeScreen v-if="getActiveUser"/>
+      <LoginForm v-else/>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
+import LoginForm from '@/components/LoginForm'
 import WelcomeScreen from '@/components/WelcomeScreen'
 
 export default {
   name: "LandingView",
 
   components: {
+    LoginForm,
     WelcomeScreen,
   },
 
-  data: () => ({
-    loggedIn: false,
-  }),
-
   computed: {
-    getLogoWidth() {
-      if(this.$vuetify.breakpoint.xs) {
-        return '360px'
-      }
-      return '480px'
-    }
+    ...mapGetters([
+      'getActiveUser',
+    ]),
+
+    // getLogoWidth() {
+    //   if(this.$vuetify.breakpoint.xs) {
+    //     return '360px'
+    //   }
+    //   return '480px'
+    // },
+
   },
 
-  methods: {
-    ...mapActions([
-      'setAppBarTitle',
-      'setNavigationValue',
-    ]),
-    handleClick() {
-      this.setAppBarTitle('Trainings')
-      this.setNavigationValue(0)
-      this.$router.push("/trainings")
-    }
-  }
 };
 </script>

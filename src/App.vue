@@ -40,6 +40,7 @@ export default {
     ...mapGetters([
       'getNavigationItems'
     ]),
+
     is404View() {
       // IMPROVE
       const allRoutes = this.getNavigationItems.map(item => item.linkTo)
@@ -76,5 +77,10 @@ export default {
   text-overflow: clip;
   overflow: visible;
 }
+
+/* .app-input .error--text {
+  color: rgba(255, 255, 255, 0.7) !important;
+  caret-color: rgb(2, 0, 0) !important;
+} */
 
 </style>

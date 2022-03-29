@@ -2,6 +2,9 @@ import Vue from 'vue'
 import types from './mutation-types'
 
 const mutations = {
+    [types.SET.ACTIVE.USER](state, user) {
+        Vue.set(state, 'activeUser', user)
+    },
     [types.SET.APPBAR.TITLEMOBILE](state, newTitle) {
         Vue.set(state.appBar, 'titleMobile', newTitle)
     },
