@@ -1,4 +1,15 @@
 const state =  {
+
+    activeUser: null,
+    // activeUser: {
+    //     firstName: "Sascha",
+    //     lastName: "Hagemann",
+    //     password: "1234",
+    //     coach: true,
+    //     admin: true,
+    //     superAdmin: true
+    // },
+    
     app: {
         club: {
             description: 'Karate Dojo',

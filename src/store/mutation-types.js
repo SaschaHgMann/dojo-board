@@ -1,5 +1,8 @@
 const types = {
     SET: {
+        ACTIVE: {
+            USER: 'SET_ACTIVE_USER',
+        },
         APPBAR: {
             TITLEMOBILE: 'SET_APPBAR_TITLEMOBILE',
         },
